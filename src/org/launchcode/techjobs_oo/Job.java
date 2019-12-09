@@ -36,9 +36,6 @@ public class Job {
     //  match.
 
     @Override
-    public String toString() { return name; }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Job)) return false;
