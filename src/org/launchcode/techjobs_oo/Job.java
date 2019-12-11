@@ -20,11 +20,6 @@ public class Job {
     public Job() {
         id = nextId;
         nextId++;
-        this.name = "";
-        this.employer = new Employer("");
-        this.location = new Location("");
-        this.positionType = new PositionType("");
-        this.coreCompetency = new CoreCompetency("");
     }
 
     public Job(String name, Employer employer, Location location, PositionType positionType,
@@ -47,58 +42,43 @@ public class Job {
         String locationInput;
         String positionTypeInput;
         String coreCompetencyInput;
-        boolean noName = false;
-        boolean noEmployer = false;
-        boolean noLocation = false;
-        boolean noPosition = false;
-        boolean noCore = false;
 
         if (this.name.equals("")) {
-            noName = true;
             nameInput = "Data not available.";
         } else {
             nameInput = this.getName();
         }
 
         if (this.employer.toString().equals("")) {
-            noEmployer = true;
             employerInput = "Data not available.";
         } else {
             employerInput = this.employer.toString();
         }
 
         if (this.location.toString().equals("")) {
-            noLocation = true;
             locationInput = "Data not available.";
         } else {
             locationInput = this.location.toString();
         }
 
         if (this.positionType.toString().equals("")) {
-            noPosition = true;
             positionTypeInput = "Data not available.";
         } else {
             positionTypeInput = this.positionType.toString();
         }
 
         if (this.coreCompetency.toString().equals("")) {
-            noCore = true;
             coreCompetencyInput = "Data not available.";
         } else {
             coreCompetencyInput = this.coreCompetency.toString();
         }
 
-        if (noName && noEmployer && noLocation && noPosition && noCore) {
-            return "OOPS! This job does not seem to exist.";
-        } else {
-            return firstLineBreak + "ID: " + this.getId() +
-                    lineBreak + "Name: " + nameInput +
-                    lineBreak + "Employer: " + employerInput +
-                    lineBreak + "Location: " + locationInput +
-                    lineBreak + "Position Type: " + positionTypeInput +
-                    lineBreak + "Core Competency: " + coreCompetencyInput + lastLineBreak;
-        }
-
+        return firstLineBreak + "ID: " + this.getId() +
+                lineBreak + "Name: " + nameInput +
+                lineBreak + "Employer: " + employerInput +
+                lineBreak + "Location: " + locationInput +
+                lineBreak + "Position Type: " + positionTypeInput +
+                lineBreak + "Core Competency: " + coreCompetencyInput + lastLineBreak;
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
