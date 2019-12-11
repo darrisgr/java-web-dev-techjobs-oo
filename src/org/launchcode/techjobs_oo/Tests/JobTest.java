@@ -35,13 +35,26 @@ public class JobTest {
         assertNotEquals(job1Id, job2Id);
     }
 
-    @Test //Test that all six fields in Job class are correctly set
+    @Test //Test that all six fields in Job class have correctly set classes and values
     public void testJobConstructorSetsAllFields() {
+        assertTrue(Integer.class.isInstance(constructor_test_job.getId()));
+        assertEquals(3, constructor_test_job.getId());
+
         assertTrue(constructor_test_job.getName() instanceof String);
+        assertEquals("Product tester", constructor_test_job.getName());
+
         assertTrue(constructor_test_job.getEmployer() instanceof Employer);
+        assertEquals("ACME", constructor_test_job.getEmployer().getValue());
+
         assertTrue(constructor_test_job.getLocation() instanceof Location);
+        assertEquals("Desert", constructor_test_job.getLocation().getValue());
+
         assertTrue(constructor_test_job.getPositionType() instanceof PositionType);
+        assertEquals("Quality control", constructor_test_job.getPositionType().getValue());
+
         assertTrue(constructor_test_job.getCoreCompetency() instanceof CoreCompetency);
+        assertEquals("Persistence", constructor_test_job.getCoreCompetency().getValue());
+
     }
 
     @Test //Test that two Job objects are not equal despite having same constructor values
