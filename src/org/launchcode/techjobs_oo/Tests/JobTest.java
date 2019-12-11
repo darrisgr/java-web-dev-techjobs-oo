@@ -31,6 +31,7 @@ public class JobTest {
     public void jobClassIdsAreUnique() {
         int job1Id = test_job1.getId();
         int job2Id = test_job2.getId();
+
         assertNotEquals(job1Id, job2Id);
     }
 
@@ -85,10 +86,10 @@ public class JobTest {
         assertFalse(toString_job.toString().contains("Name: Data not available."));
     }
 
-    //Bonus
-    @Test //Test for if a job ONLY contains Id field, returns "OOPS! This job does not seem to exist."
-    public void testJobAccountsForAllEmptyFields() {
-        assertEquals("OOPS! This job does not seem to exist.", test_job1.toString());
-    }
+//    //Bonus
+//    @Test //Test for if a job ONLY contains Id field, returns "OOPS! This job does not seem to exist."
+//    public void testJobAccountsForNoFieldsButId() {
+//        assertEquals("OOPS! This job does not seem to exist.", test_job1.toString());
+//    }
 
 }
