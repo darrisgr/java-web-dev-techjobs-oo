@@ -74,23 +74,15 @@ public class JobTest {
     @Test //Test that string should contain label for each field, followed by data stored in that field
     public void testJobContainsLabelsAndDataOnOwnLines() {
 
-        assertTrue(toString_job.toString().contains("ID: "));
-        assertEquals(6, toString_job.getId());
+        String output = "\n" +
+                "ID: 6\n" +
+                "Name: Ice cream taster\n" +
+                "Employer: Data not available.\n" +
+                "Location: Home\n" +
+                "Position Type: UX\n" +
+                "Core Competency: Taste\n";
 
-        assertTrue(toString_job.toString().contains("Name: "));
-        assertEquals("Ice cream taster", toString_job.getName());
-
-        assertTrue(toString_job.toString().contains("Employer: "));
-        assertEquals("", toString_job.getEmployer().toString());
-
-        assertTrue(toString_job.toString().contains("Location: "));
-        assertEquals("Home", toString_job.getLocation().toString());
-
-        assertTrue(toString_job.toString().contains("Position Type: "));
-        assertEquals("UX", toString_job.getPositionType().toString());
-
-        assertTrue(toString_job.toString().contains("Core Competency: "));
-        assertEquals("Taste", toString_job.getCoreCompetency().toString());
+        assertEquals(output, toString_job.toString());
     }
 
     @Test //Test that if a field is empty, inputs "Data not available." after label
