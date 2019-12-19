@@ -31,8 +31,9 @@ public class JobTest {
     public void jobClassIdsAreUnique() {
         int job1Id = test_job1.getId();
         int job2Id = test_job2.getId();
+        int difference = job2Id - job1Id;
 
-        assertNotEquals(job1Id, job2Id);
+        assertEquals(1, difference, 1);
     }
 
     @Test //Test that all six fields in Job class have correctly set classes and values
