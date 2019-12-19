@@ -33,6 +33,8 @@ public class JobTest {
         int job2Id = test_job2.getId();
         int difference = job2Id - job1Id;
 
+        assertEquals(1, job1Id, 0.0001);
+        assertEquals(2, job2Id, 0.0001);
         assertEquals(1, difference, 1);
     }
 
